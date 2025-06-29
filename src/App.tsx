@@ -15,6 +15,8 @@ import ServicesSettings from "./pages/admin/settings/Services";
 import AiAgentSettings from "./pages/admin/settings/AiAgent";
 import WhatsAppSettings from "./pages/admin/settings/WhatsApp";
 import IntegrationsSettings from "./pages/admin/settings/Integrations";
+import TeamSettings from "./pages/admin/settings/Team";
+import BillingPage from "./pages/admin/Billing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +39,8 @@ const App = () => (
           <Route path="/admin/settings/ai-agent" element={<AiAgentSettings />} />
           <Route path="/admin/settings/whatsapp" element={<WhatsAppSettings />} />
           <Route path="/admin/settings/integrations" element={<IntegrationsSettings />} />
+          <Route path="/admin/settings/team" element={<TeamSettings />} />
+          <Route path="/admin/billing" element={<BillingPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
