@@ -160,9 +160,11 @@ export function AdminLayout({ children }: AdminLayoutProps) {
                   <User className="mr-2 h-4 w-4" />
                   Perfil
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Settings className="mr-2 h-4 w-4" />
-                  Configurações
+                <DropdownMenuItem asChild>
+                  <Link to="/admin/settings">
+                    <Settings className="mr-2 h-4 w-4" />
+                    Configurações
+                  </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="text-destructive">
