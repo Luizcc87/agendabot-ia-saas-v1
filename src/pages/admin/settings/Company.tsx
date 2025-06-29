@@ -20,6 +20,7 @@ import {
   Globe,
   Instagram,
   Facebook,
+  MessageSquare,
   Loader2
 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
