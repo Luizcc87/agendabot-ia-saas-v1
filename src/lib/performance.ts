@@ -106,18 +106,24 @@ export const performanceMonitor = {
   // Web Vitals básicos
   measureWebVitals: () => {
     // Largest Contentful Paint
-    new PerformanceObserver((entryList) => {
-      for (const entry of entryList.getEntries()) {
-        console.log('LCP:', entry.startTime);
-      }
-    }).observe({ entryTypes: ['largest-contentful-paint'] });
+    if ('PerformanceObserver' in window) {
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          console.log('LCP:', entry.startTime);
+        }
+      }).observe({ entryTypes: ['largest-contentful-paint'] });
 
-    // First Input Delay
-    new PerformanceObserver((entryList) => {
-      for (const entry of entryList.getEntries()) {
-        console.log('FID:', entry.processingStart - entry.startTime);
-      }
-    }).observe({ entryTypes: ['first-input'] });
+      // First Input Delay - Fixed typing issue
+      new PerformanceObserver((entryList) => {
+        for (const entry of entryList.getEntries()) {
+          // Type assertion to access processingStart property
+          const eventEntry = entry as PerformanceEventTiming;
+          if (eventEntry.processingStart) {
+            console.log('FID:', eventEntry.processingStart - eventEntry.startTime);
+          }
+        }
+      }).observe({ entryTypes: ['first-input'] });
+    }
   }
 };
 
