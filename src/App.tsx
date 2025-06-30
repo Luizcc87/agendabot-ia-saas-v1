@@ -9,6 +9,7 @@ import Auth from "./pages/Auth";
 import Dashboard from "./pages/admin/Dashboard";
 import CalendarPage from "./pages/admin/Calendar";
 import Leads from "./pages/admin/Leads";
+import Team from "./pages/admin/Team";
 import Settings from "./pages/admin/Settings";
 import CompanySettings from "./pages/admin/settings/Company";
 import ServicesSettings from "./pages/admin/settings/Services";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/calendar" element={<CalendarPage />} />
           <Route path="/admin/leads" element={<Leads />} />
+          <Route path="/admin/team" element={<Team />} />
           <Route path="/admin/settings" element={<Settings />} />
           <Route path="/admin/settings/company" element={<CompanySettings />} />
           <Route path="/admin/settings/services" element={<ServicesSettings />} />
