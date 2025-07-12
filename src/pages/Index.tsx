@@ -153,7 +153,7 @@ export default function Index() {
               <Link to="/auth">Entrar</Link>
             </Button>
             <Button asChild>
-              <Link to="/auth">Começar Grátis</Link>
+              <Link to="/onboarding">Começar Grátis</Link>
             </Button>
           </nav>
 
@@ -186,7 +186,7 @@ export default function Index() {
                   <Link to="/auth">Entrar</Link>
                 </Button>
                 <Button asChild>
-                  <Link to="/auth">Começar Grátis</Link>
+                  <Link to="/onboarding">Começar Grátis</Link>
                 </Button>
               </div>
             </nav>
@@ -215,7 +215,7 @@ export default function Index() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" asChild>
-              <Link to="/auth">
+              <Link to="/onboarding">
                 Teste Grátis por 7 Dias
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -321,15 +321,15 @@ export default function Index() {
                     ))}
                   </ul>
                   
-                  <Button 
-                    className="w-full" 
-                    variant={plan.popular ? "default" : "outline"}
-                    asChild
-                  >
-                    <Link to="/auth">
-                      Começar Agora
-                    </Link>
-                  </Button>
+                    <Button 
+                      className="w-full" 
+                      variant={plan.popular ? "default" : "outline"}
+                      asChild
+                    >
+                      <Link to="/onboarding">
+                        Começar Agora
+                      </Link>
+                    </Button>
                 </CardContent>
               </Card>
             ))}
@@ -385,7 +385,7 @@ export default function Index() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link to="/auth">
+              <Link to="/onboarding">
                 Começar Teste Gratuito
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

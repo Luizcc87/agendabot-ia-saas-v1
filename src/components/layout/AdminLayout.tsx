@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { useAuth } from '@/contexts/AuthContext';
+import { TrialInfo } from '@/components/ui/trial-info';
 import {
   Calendar,
   MessageSquare,
@@ -15,7 +17,8 @@ import {
   User,
   LogOut,
   Building,
-  CreditCard
+  CreditCard,
+  Shield
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -43,6 +46,7 @@ interface AdminLayoutProps {
 export function AdminLayout({ children }: AdminLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
 
   return (
     <div className="flex h-screen bg-background">
@@ -178,7 +182,12 @@ export function AdminLayout({ children }: AdminLayoutProps) {
 
         {/* Page content */}
         <main className="flex-1 overflow-y-auto bg-background">
-          {children}
+          <div className="p-6 pb-0">
+            <TrialInfo />
+          </div>
+          <div className={user?.role === 'trial' ? 'mt-6' : ''}>
+            {children}
+          </div>
         </main>
       </div>
     </div>
