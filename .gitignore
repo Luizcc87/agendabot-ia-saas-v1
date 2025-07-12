@@ -6,6 +6,7 @@ build/
 # Ambiente
 .env
 .env.*
+mcp.json
 
 # Logs
 npm-debug.log*
